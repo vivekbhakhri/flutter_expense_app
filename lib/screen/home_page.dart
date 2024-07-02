@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_expense_app/screen/recent_expense_screen.dart';
 import 'package:flutter_expense_app/screen/total_expense_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,12 +12,8 @@ class HomePage extends StatelessWidget {
         title: const Text('Home Page'),
       ),
       body: Container(
-        padding: const EdgeInsets.all(16),
-        margin: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-        ),
+        padding: const EdgeInsets.only(top: 16, bottom: 16),
+        margin: const EdgeInsets.only(top: 16, bottom: 16),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -24,17 +21,14 @@ class HomePage extends StatelessWidget {
               // TODO: Add montly expense info
               const TotalExpenseScreen(),
               // TODO: Add recent enpenses
-              const Column(
-                children: [
-                  Text('Recent Expenses',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                ],
-              ),
+              const RecentExpenseScreen(),
               // TODO: Add button to add new expense
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Add Expense'),
+              Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Add Expense'),
+                ),
               ),
             ]),
       ),
